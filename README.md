@@ -1,3 +1,3 @@
 
-# Presentations
-Slides and code samples of my presentations
+# Talks
+Presentation slides and code samples of my talks
