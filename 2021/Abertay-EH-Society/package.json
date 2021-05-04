@@ -1,0 +1,17 @@
+{
+  "name": "puppeteer-talk",
+  "version": "1.0.0",
+  "description": "Examples for my Puppeteer talk",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tolga Ünlü",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "*",
+    "puppeteer": "^9.0.0",
+    "resemblejs": "^3.2.5",
+    "websocket": "^1.0.34"
+  }
+}

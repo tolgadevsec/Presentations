@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <input id="reflective-input"> 
+        <button id="add-input">Add</button>
+        <button id="show-hidden">Show</button>
+        <div id="reflection"></div>
+        <div id="hidden" style="display:none;">
+            <h2>Sorry, your session has expired - Please login again to continue</h2>
+            <label>Username:</label><br>
+            <input><br>
+            <label>Password:</label><br>
+            <input><br><br>
+            <button>Login</button>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", (loadedEvent) => {
+                document.getElementById("add-input").addEventListener("click", (clickEvent) => {
+                    let divElement = document.createElement("div");
+                    
+                    divElement.innerHTML = document.getElementById("reflective-input").value;
+                    
+                    document.getElementById("reflection").appendChild(divElement);
+                });
+                document.getElementById("show-hidden").addEventListener("click", (clickEvent) => {
+                    document.getElementById("hidden").style.display = "";  
+                });
+                
+                let webSocket = new WebSocket("ws://localhost:8080", "echo-protocol");
+                webSocket.addEventListener("open", (openEvent) => {
+                   webSocket.send("foobar");
+                });
+            });
+        </script>
+    </body>
+</html>
