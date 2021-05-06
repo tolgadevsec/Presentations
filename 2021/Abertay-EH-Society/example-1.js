@@ -9,8 +9,11 @@ const monkeyPatch = fs.readFileSync("./monkeypatch.js","utf8");
   const page = await browser.newPage();
     
   await page.on("console", (message) => {
-    if(message.text().includes("PAYLOAD-ID")){
-       console.log("[*] Payload detected: " + message.text()); 
+     //if(message.text().includes("PAYLOAD-ID")){
+       //console.log("[*] Payload detected: " + message.text()); 
+    //}
+    if(message.text().includes("[INNERHTML]")){
+      console.log(message.text());
     }
   });
     
